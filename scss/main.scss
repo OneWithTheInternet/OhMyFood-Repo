@@ -1,0 +1,30 @@
+@import './base/resets';
+@import './base/typography';
+
+
+@mixin flexbox {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+body {
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.main-container {
+    @include flexbox();
+    max-width: 380px;
+    min-width: 300px;
+    margin: auto;
+}
+
+header {
+    width: 100%;
+    background-color: red;
+    padding: 15px;
+}
+
+.header_logo {
+    width: 30%;
+}
