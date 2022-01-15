@@ -1,4 +1,67 @@
+@import './variables';
+
 @mixin flexbox {
     display: flex;
     flex-flow: row wrap;
+}
+
+@mixin full-width {
+    width: 100%;
+}
+
+@mixin auto-margin {
+    margin: auto;
+}
+
+@mixin round-corners {
+    border-radius: 30px;
+}
+
+@mixin box-shadow($color) {
+    @if (lightness($color) > 75% ){
+        box-shadow: 0px 5px 10px darken($color, $amount: 15%);
+    }
+    @else {
+        box-shadow: 0px 5px 10px lighten($color, $amount: 20%);
+    }
+}
+
+@mixin alt-bg($color) {
+    @if (lightness($color) > 75% ){
+        background-color: darken($color, $amount: 3%);
+    }
+    @else {
+        background-color: lighten($color, $amount: 10%);
+    }
+}
+
+@mixin steps-style {
+    @include flexbox();
+    @include alt-bg($bg1);
+    @include box-shadow($bg1);
+    @include round-corners();
+    width: 95%;
+    margin: 30px auto;
+    justify-content: start;
+    align-items: center;
+
+    &_icon, &_text {
+        color: faded-text-color($text-color);
+    }
+
+    &_counter {
+        
+        & p {
+            color: $bg1;
+            font-size: 18px;
+            padding: 10px 15px;
+            background-color: map-get($map: $accent-colors, $key: "violet");
+            @include round-corners();
+        }
+    }
+
+    &_icon {
+        font-size: 25px;
+        padding: 35px;
+    }
 }

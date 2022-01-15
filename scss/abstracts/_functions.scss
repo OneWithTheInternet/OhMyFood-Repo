@@ -1,0 +1,9 @@
+@function faded-text-color($color) {
+    @if (lightness($color) > 75% ){
+        $color: darken($color, $amount: 40%);
+    }
+    @else {
+        $color: lighten($color, $amount: 40%);
+    }
+    @return $color;
+}

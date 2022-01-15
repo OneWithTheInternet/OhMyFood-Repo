@@ -1,3 +1,27 @@
+@import '../abstracts/_variables.scss';
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: roboto, Arial, Helvetica, sans-serif;
+    color: $text-color;
+}
+
+p {
+    font-size: 14px;
+    margin: 0px;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 0px;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0px;
+}
+
+h4 {
+    font-size: 20px;
+    margin: 0px;
 }

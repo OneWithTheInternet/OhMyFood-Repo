@@ -1,0 +1,76 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+@import '../abstracts/functions';
+
+
+.location{
+    @include flexbox();
+    @include full-width();
+    background-color: $bg2;
+    height: 50px;
+
+    &_icon {
+        @include auto-margin;
+
+        & .fa-map-marker-alt{
+            margin-right: 12px;
+        }
+
+        & p {
+            display: inline;
+        }
+    }
+}
+
+.section-1{
+    @include full-width;
+    text-align: center;
+    @include alt-bg($bg1);
+
+    &_title {
+        padding: 35px 50px 20px 50px;
+    }
+
+    &_subtitle {
+        padding: 20px 50px;
+        font-weight: 400;
+        color: faded-text-color($text-color);
+    }
+    
+    &_explore-btn p{
+        display: inline-block;
+        color: white;
+        background-image: linear-gradient(map-get($accent-colors, "pink"), map-get($accent-colors, "violet")); 
+        border-radius: 40px;
+        padding: 15px 20px;
+        margin: 10px 0px 50px 0px;
+        @include box-shadow($color: map-get($accent-colors, "violet"));
+    }
+}
+
+.section-2 {
+    @include full-width;
+    padding: 15px;
+
+    &_tittle {
+        margin: 40px 0px 30px 0px;
+    }
+}
+
+.step-1 {
+    @include steps-style();
+}
+
+.step-2 {
+    @include steps-style();
+}
+
+.step-3 {
+    @include steps-style();
+
+    &_icon {
+        font-size: 30px;
+        padding: 35px;
+        color: map-get($map: $accent-colors, $key: "violet");
+    }
+}
