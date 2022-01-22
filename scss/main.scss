@@ -5,20 +5,23 @@
 @import './abstracts/functions';
 
 body {
-    box-sizing: border-box;
     background-color: $bg1;
-}
 
-a {
-    text-decoration: none;
-    color: $text-color;
-}
+    * {
+        box-sizing: border-box;
+    }
 
-.main-container {
-    @include flexbox();
-    max-width: 480px;
-    min-width: 280px;
-    @include auto-margin;
+    & a {
+        text-decoration: none;
+        color: $text-color;
+    }
+    
+    & .main-container {
+        @include flexbox();
+        max-width: 480px;
+        min-width: 320px;
+        @include auto-margin;
+    }
 }
 
 @import './layout/header';

@@ -1,0 +1,43 @@
+.footer-container {
+    width: 100%;
+    background-color: $bg3;
+}
+
+.footer {
+    @include flexbox();
+    max-width: 480px;
+    min-width: 320px;
+    padding: $section-padding;
+    @include auto-margin;
+
+    &_logo {
+        width: 100%;
+        
+        & img{
+            width: 120px;
+            margin: 30px 0px 10px 0px;
+        }
+    }
+
+    & a {
+        width: 100%;
+    }
+
+    &_link--with-icon {
+        @include flexbox();
+        color: $bg1;
+        width: 100%;
+        margin: 5px 0px;
+
+        & p {
+            margin-left: 10px;
+        }
+    }
+
+    &_link--no-icon {
+        @include flexbox();
+        color: $bg1;
+        width: 100%;
+        margin: 5px 0px;
+    }
+}

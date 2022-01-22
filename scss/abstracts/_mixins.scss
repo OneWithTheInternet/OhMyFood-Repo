@@ -36,32 +36,84 @@
 }
 
 @mixin steps-style {
-    @include flexbox();
-    @include alt-bg($bg1);
-    @include box-shadow($bg1);
-    @include round-corners();
-    width: 95%;
-    margin: 30px auto;
-    justify-content: start;
+    @include full-width;
+    display: flex;
+    flex-flow: row nowrap;
     align-items: center;
+    position: relative;
+}
 
-    &_icon, &_text {
-        color: faded-text-color($text-color);
-    }
-
+@mixin steps-counter-style { 
     &_counter {
-        
+        position: absolute;
+        left: -1%;
         & p {
             color: $bg1;
-            font-size: 18px;
-            padding: 10px 15px;
+            font-size: 14px;
+            padding: 5px 9px;
             background-color: map-get($map: $accent-colors, $key: "violet");
             @include round-corners();
         }
     }
+}
 
-    &_icon {
-        font-size: 25px;
-        padding: 35px;
+@mixin steps-content-style {    
+    &_content{
+        display: flex;
+        flex-flow: row nowrap;
+        @include alt-bg($bg1);
+        @include box-shadow($bg1);
+        @include round-corners();
+        width: 97%;
+        margin: 15px 0px 15px auto;
+        justify-content: start;
+        align-items: center;
+
+
+        &_icon, &_text {
+            color: faded-text-color($text-color);
+        }
+
+        &_icon {
+            font-size: 25px;
+            padding: 7% 7% 7% 10%;
+        }  
     }
+
+}
+
+@mixin cards-style {
+    @include full-width;
+    @include box-shadow($bg1)
+    background-color: $bg1;
+    border-radius: 0px 0px 20px 20px;
+    margin: 18px 0px;
+
+    &_image {
+        width: 100%;
+
+        & img {
+            border-radius: 20px 20px 0px 0px;
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+    }
+
+    &_description {
+        @include flexbox();
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 15px;
+
+        & a div p {
+            color: faded-text-color($text-color);
+            margin-top: 5px;
+        }
+
+        &_icon {
+            font-size: 20px;
+            color: faded-text-color($text-color);
+        }
+    }    
 }

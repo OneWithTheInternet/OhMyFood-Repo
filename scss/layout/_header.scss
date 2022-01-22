@@ -1,8 +1,15 @@
-header {
-    @include full-width();
-    padding: 25px 0px 15px 0px;
+.header-container {
+    width: 100%;
     background-color: $bg1;
-    @include box-shadow($bg1);
+    @include box-shadow($bg2);
+    z-index: 1;
+}
+
+header {
+    max-width: 480px;
+    min-width: 320px;
+    margin: auto;
+    padding: 25px 25px 15px 25px;
 }
 
 .header_logo {

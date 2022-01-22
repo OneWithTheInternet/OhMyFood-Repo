@@ -28,7 +28,7 @@
     @include alt-bg($bg1);
 
     &_title {
-        padding: 35px 50px 20px 50px;
+        padding: 0px 50px 0px 50px;
     }
 
     &_subtitle {
@@ -50,27 +50,43 @@
 
 .section-2 {
     @include full-width;
-    padding: 15px;
+    padding: $section-padding;
 
     &_tittle {
-        margin: 40px 0px 30px 0px;
+        margin: 35px 0px 20px 0px;
     }
 }
 
 .step-1 {
-    @include steps-style();
+    @include steps-style;
+    @include steps-counter-style;
+    @include steps-content-style;
 }
 
 .step-2 {
-    @include steps-style();
+    @include steps-style;
+    @include steps-counter-style;
+    @include steps-content-style;
 }
 
 .step-3 {
-    @include steps-style();
+    @include steps-style;
+    @include steps-counter-style;
+    @include steps-content-style;
 
-    &_icon {
+    &_content_icon {
         font-size: 30px;
-        padding: 35px;
+        padding: 7% 7% 7% 10%;
         color: map-get($map: $accent-colors, $key: "violet");
     }
+}
+
+.section-3 {
+    @include full-width;
+    padding: $section-padding;
+    @include alt-bg($bg1);
+}
+
+.cards {
+    @include cards-style;
 }
