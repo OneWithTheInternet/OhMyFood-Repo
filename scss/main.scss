@@ -22,8 +22,9 @@ body {
         min-width: 320px;
         @include auto-margin;
     }
+    
+    @import './layout/header';
+    /* @import './pages/home'; */
+    @import './pages/thefullpalette.scss';
+    @import './layout/footer';
 }
-
-@import './layout/header';
-@import './pages/home';
-@import './layout/footer';

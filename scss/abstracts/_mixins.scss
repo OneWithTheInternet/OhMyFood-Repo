@@ -44,7 +44,7 @@
 }
 
 @mixin steps-counter-style { 
-    &_counter {
+    &__counter {
         position: absolute;
         left: -1%;
         & p {
@@ -58,7 +58,7 @@
 }
 
 @mixin steps-content-style {    
-    &_content{
+    &__content{
         display: flex;
         flex-flow: row nowrap;
         @include alt-bg($bg1);
@@ -70,11 +70,11 @@
         align-items: center;
 
 
-        &_icon, &_text {
+        &__icon, &__text {
             color: faded-text-color($text-color);
         }
 
-        &_icon {
+        &__icon {
             font-size: 25px;
             padding: 7% 7% 7% 10%;
         }  
@@ -86,10 +86,10 @@
     @include full-width;
     @include box-shadow($bg1)
     background-color: $bg1;
-    border-radius: 0px 0px 20px 20px;
+    border-radius: 20px 0px 20px 20px;
     margin: 18px 0px;
 
-    &_image {
+    &__image {
         width: 100%;
 
         & img {
@@ -100,7 +100,7 @@
         }
     }
 
-    &_description {
+    &__description {
         @include flexbox();
         align-items: flex-start;
         justify-content: space-between;
@@ -111,7 +111,7 @@
             margin-top: 5px;
         }
 
-        &_icon {
+        &__icon {
             font-size: 20px;
             color: faded-text-color($text-color);
         }

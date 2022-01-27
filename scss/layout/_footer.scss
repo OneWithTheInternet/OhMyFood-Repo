@@ -1,5 +1,6 @@
 .footer-container {
     width: 100%;
+    min-width: 320px;
     background-color: $bg3;
 }
 
@@ -10,7 +11,7 @@
     padding: $section-padding;
     @include auto-margin;
 
-    &_logo {
+    &__logo {
         width: 100%;
         
         & img{
@@ -23,7 +24,7 @@
         width: 100%;
     }
 
-    &_link--with-icon {
+    &__link--with-icon {
         @include flexbox();
         color: $bg1;
         width: 100%;
@@ -34,7 +35,7 @@
         }
     }
 
-    &_link--no-icon {
+    &__link--no-icon {
         @include flexbox();
         color: $bg1;
         width: 100%;

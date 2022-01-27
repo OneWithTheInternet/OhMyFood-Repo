@@ -9,7 +9,7 @@
     background-color: $bg2;
     height: 50px;
 
-    &_icon {
+    &__icon {
         @include auto-margin;
 
         & .fa-map-marker-alt{
@@ -27,17 +27,19 @@
     text-align: center;
     @include alt-bg($bg1);
 
-    &_title {
+    &__title {
         padding: 0px 50px 0px 50px;
     }
 
-    &_subtitle {
-        padding: 20px 50px;
+    &__subtitle {
+        padding: 0px 50px;
+        margin-bottom: 20px;
+        margin-top: 10px;
         font-weight: 400;
         color: faded-text-color($text-color);
     }
     
-    &_explore-btn p{
+    &__explore-btn p{
         display: inline-block;
         color: white;
         background-image: linear-gradient(map-get($accent-colors, "pink"), map-get($accent-colors, "violet")); 
@@ -52,7 +54,7 @@
     @include full-width;
     padding: $section-padding;
 
-    &_tittle {
+    &__tittle {
         margin: 35px 0px 20px 0px;
     }
 }
@@ -74,7 +76,7 @@
     @include steps-counter-style;
     @include steps-content-style;
 
-    &_content_icon {
+    &__content__icon {
         font-size: 30px;
         padding: 7% 7% 7% 10%;
         color: map-get($map: $accent-colors, $key: "violet");

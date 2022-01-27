@@ -1,19 +1,30 @@
 .header-container {
     width: 100%;
+    min-width: 320px;
     background-color: $bg1;
     @include box-shadow($bg2);
     z-index: 1;
 }
 
 header {
+    @include flexbox();
+    justify-content: center;
+    align-items: center;
     max-width: 480px;
     min-width: 320px;
     margin: auto;
     padding: 25px 25px 15px 25px;
-}
+    position: relative;
 
-.header_logo {
-    display: block;
-    width: 140px;
-    margin: auto;
+    .header__back-icon {
+        color: faded-text-color($text-color);
+        position: absolute;
+        left: 20px;
+    }
+
+    .header__logo img{
+        display: block;
+        width: 140px;
+        margin: auto;
+    }
 }
