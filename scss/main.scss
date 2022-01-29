@@ -24,7 +24,7 @@ body {
     }
     
     @import './layout/header';
-    /* @import './pages/home'; */
+    @import './pages/home'; 
     @import './pages/thefullpalette.scss';
     @import './layout/footer';
 }

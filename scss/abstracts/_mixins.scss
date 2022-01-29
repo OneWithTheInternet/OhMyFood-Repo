@@ -84,7 +84,7 @@
 
 @mixin cards-style {
     @include full-width;
-    @include box-shadow($bg1)
+    @include box-shadow($bg1);
     background-color: $bg1;
     border-radius: 20px 0px 20px 20px;
     margin: 18px 0px;
