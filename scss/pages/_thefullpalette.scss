@@ -13,6 +13,8 @@
 
 .section-2 {
     width: 100%;
+    position: relative;
+    top: -40px;
 }
 
 .menu-container {
@@ -24,27 +26,40 @@
 
     &__title {
         width: 100%;
+        @include flexbox();
+        justify-content: space-between;
+        align-items: center;
 
         & h1 {
             margin: 30px 0px 15px 0px;
             font-family: shrikhand;
             font-weight: normal;
         } 
+
+        & i {
+            color: faded-text-color($text-color);
+            margin-right: 10px;
+        }
     }
 
     &__course {
-        width: 100%;
+        @include course-style
+    }
 
-        & h3 {
-            margin: 10px 0px;
+    & a{
+        width: 100%;
+    }
+
+    .plate-card {
+        @include plate-card();
+    }
+
+    &__order-btn {
+        margin: 20px auto 0px auto;
+
+        & p {
+            @include call-to-action-button;
         }
     }
 }
 
-.plate-card {
-    background-color: $bg1;
-    width: 100%;
-    padding: 10px;
-    border-radius: 15px;
-    @include box-shadow($bg1);
-}

@@ -117,3 +117,81 @@
         }
     }    
 }
+
+@mixin plate-card {
+    background-color: $bg1;
+    width: 100%;
+    margin: 15px auto;
+    border-radius: 15px;
+    @include box-shadow($bg1);
+    @include flexbox();
+    align-items: center;
+
+    &__content{
+        width: 100%;
+        padding: 10px;
+
+        &__description {
+            @include flexbox();
+            justify-content: space-between;
+            align-items: center;
+            
+            &__text {
+                color: faded-text-color($text-color);
+            }
+        }    
+    }
+
+    &__content:hover {
+        width: 85%;
+    }
+
+    &__checkbox {
+        display: none;
+
+        & i {
+            display: none;
+        }
+    }
+
+    &__checkbox:hover {
+        height: 55px;
+        width: 15%;
+        background-color: map-get($accent-colors, turq);
+        border-radius: 0px 15px 15px 0px;
+        @include flexbox();
+        justify-content: center;
+        align-items: center;
+
+        & i {
+            color: $bg1;
+        }
+    }        
+}
+
+@mixin call-to-action-button {
+    width: 162px;
+    display: inline-block;
+    color: white;
+    background-image: linear-gradient(map-get($accent-colors, "pink"), map-get($accent-colors, "violet")); 
+    border-radius: 40px;
+    padding: 15px 20px;
+    margin: 10px 0px 50px 0px;
+    text-align: center;
+    @include box-shadow($color: map-get($accent-colors, "violet"));
+}
+
+@mixin course-style {
+    width: 100%;
+    color: faded-text-color($text-color);
+    
+    & h3 {
+        margin: 10px 0px;
+    }
+
+    &__underline {
+        height: 4px;
+        width: 45px;
+        background-color: map-get($accent-colors, turq);
+    }
+}
