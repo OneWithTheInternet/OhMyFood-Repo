@@ -7,3 +7,13 @@
     }
     @return $color;
 }
+
+@function faded-text-color-2($color) {
+    @if (lightness($color) > 75% ){
+        $color: darken($color, $amount: 40%);
+    }
+    @else {
+        $color: lighten($color, $amount: 35%);
+    }
+    @return $color;
+}

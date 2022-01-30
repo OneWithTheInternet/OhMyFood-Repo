@@ -1,3 +1,5 @@
+
+
 .section-1 {
     width: 100%;
     
@@ -35,9 +37,13 @@
             font-weight: normal;
         } 
 
-        & i {
-            color: faded-text-color($text-color);
+        &__save-icon{
+            @include save-icon-style;
             margin-right: 10px;
+        }
+    
+        &__save-icon:hover {
+            @include save-icon-style-hover;
         }
     }
 
@@ -62,3 +68,6 @@
     }
 }
 
+.footer-container {
+    margin-top: -40px;
+}
