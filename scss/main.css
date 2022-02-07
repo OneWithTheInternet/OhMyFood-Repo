@@ -367,6 +367,97 @@ h4 {
   margin: 0px;
 }
 
+.loader__container {
+  background-color: #FFFFFF;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-animation: loaderFade 3s ease-in 1 normal forwards;
+          animation: loaderFade 3s ease-in 1 normal forwards;
+}
+
+@-webkit-keyframes loaderFade {
+  75% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0%;
+  }
+}
+
+@keyframes loaderFade {
+  75% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0%;
+  }
+}
+
+.loader__container div {
+  background-color: #9356dc;
+  width: 8px;
+  height: 8px;
+  margin: 4px;
+  border-radius: 50%;
+  -webkit-animation: bounce 0.6s ease-in-out infinite alternate;
+          animation: bounce 0.6s ease-in-out infinite alternate;
+}
+
+.loader__container :nth-child(1) {
+  background-color: #FF79DA;
+  -webkit-animation-delay: 0.50s;
+          animation-delay: 0.50s;
+}
+
+.loader__container :nth-child(2) {
+  background-color: #99E2D0;
+  -webkit-animation-delay: 0.25s;
+          animation-delay: 0.25s;
+}
+
+@-webkit-keyframes bounce {
+  from {
+    opacity: 0%;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 100%;
+    -webkit-transform: translate3d(0, -35px, 0);
+            transform: translate3d(0, -35px, 0);
+  }
+}
+
+@keyframes bounce {
+  from {
+    opacity: 0%;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 100%;
+    -webkit-transform: translate3d(0, -35px, 0);
+            transform: translate3d(0, -35px, 0);
+  }
+}
+
 .homepage-body {
   background-color: #FFFFFF;
 }
