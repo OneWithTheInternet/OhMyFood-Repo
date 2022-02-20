@@ -2,17 +2,29 @@
     width: 100%;
     min-width: 320px;
     background-color: $bg3;
+    min-height: 150px;
 }
 
 .footer {
     @include flexbox();
-    max-width: 480px;
+    max-width: 992px;
     min-width: 320px;
     padding: $section-padding;
     @include auto-margin;
 
+    @media only screen and (min-width: 780px) {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
     &__logo {
         width: 100%;
+        
+        @media only screen and (min-width: 780px) {
+            width:fit-content;
+        }
         
         & svg {
             width: 120px;
@@ -22,6 +34,10 @@
 
     & a {
         width: 100%;
+
+        @media only screen and (min-width: 780px) {
+            width:fit-content;
+        }
     }
 
     &__link--with-icon {

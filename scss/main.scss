@@ -4,9 +4,8 @@
 @import './abstracts/variables';
 @import './abstracts/functions';
 
-// @include loader;
-
 .homepage-body {
+    @include loader;
     @include base-styles();
     
     @import './layout/header';

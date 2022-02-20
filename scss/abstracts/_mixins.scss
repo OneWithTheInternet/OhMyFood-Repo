@@ -13,8 +13,8 @@
     
     & .main-container {
         @include flexbox();
-        max-width: 480px;
         min-width: 320px;
+        max-width: 992px;
         @include auto-margin;
         position: relative;
         z-index: 1;
@@ -66,11 +66,15 @@
 }
 
 @mixin steps-style {
-    @include full-width;
+    width: 100%;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
     position: relative;
+
+    @media only screen and (min-width: 780px) {
+        width: 30%;
+    }
 }
 
 @mixin steps-counter-style { 
@@ -96,7 +100,7 @@
         @include box-shadow($bg1);
         @include round-corners();
         width: 97%;
-        max-height: 88px;
+        height: 88px;
         margin: 15px 0px 15px auto;
         justify-content: start;
         align-items: center;
@@ -126,6 +130,10 @@
     margin: 18px 0px;
     position: relative;
 
+    @media only screen and (min-width: 780px) {
+        width: 48%;
+    }
+
     &__image {
         width: 100%;
 
@@ -143,6 +151,7 @@
 
     &__description {
         @include flexbox();
+        flex-wrap: nowrap;
         align-items: flex-start;
         justify-content: space-between;
         padding: 15px;
@@ -203,6 +212,11 @@
     flex-wrap: nowrap;
     align-items: center;
 
+
+    @media only screen and (min-width: 780px) {
+        min-height: 100px;
+    }
+
     &__content{
         width: 100%;
         padding: 15px;
@@ -247,6 +261,10 @@
         border-radius: 0px 15px 15px 0px;
         display: none;
 
+        @media only screen and (min-width: 780px) {
+            min-height: 100px;
+        }
+
         & i {
             color: $bg1;
         }
@@ -280,6 +298,7 @@
 
     &:hover {
         background-image: lighten-btn-background();
+        box-shadow: 0px 5px 10px lighten(map-get($accent-colors, "viol"), 8%);
     }
 }
 
@@ -463,6 +482,30 @@
 
     &:nth-child(5) {
         animation-delay: 0.8s;
+    }
+
+    &:nth-child(7) {
+        animation-delay: 1s;
+    }
+
+    &:nth-child(8) {
+        animation-delay: 1.2s;
+    }
+
+    &:nth-child(9) {
+        animation-delay: 1.4s;
+    }
+
+    &:nth-child(11) {
+        animation-delay: 1.6s;
+    }
+
+    &:nth-child(12) {
+        animation-delay: 1.8s;
+    }
+
+    &:nth-child(13) {
+        animation-delay: 2s;
     }
 }
 

@@ -49,11 +49,19 @@
 }
 
 .section-2 {
-    @include full-width;
+    width: 100%;
     padding: $section-padding;
+
+    @media only screen and (min-width: 780px) {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
 
     &__tittle {
         margin: 35px 0px 20px 0px;
+        width: 100%;
     }
 }
 
@@ -86,9 +94,18 @@
 }
 
 .section-3 {
-    @include full-width;
+    width: 100%;
     padding: $section-padding;
     @include alt-bg($bg1);
+
+    &__results {
+        @media only screen and (min-width: 780px) {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
 }
 
 .cards {
