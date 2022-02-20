@@ -4,6 +4,8 @@ $accent-colors: (
     "turq": #99E2D0,
 );
 
+$gradient1: linear-gradient(map-get($accent-colors, "purl"), map-get($accent-colors, "viol"));
+
 $purl: #FF79DA;
 
 $bg1: #FFFFFF;

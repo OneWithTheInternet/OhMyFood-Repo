@@ -4,7 +4,7 @@
 @import './abstracts/variables';
 @import './abstracts/functions';
 
-@include loader;
+// @include loader;
 
 .homepage-body {
     @include base-styles();

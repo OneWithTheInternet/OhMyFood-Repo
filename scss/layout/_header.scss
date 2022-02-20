@@ -17,10 +17,13 @@ header {
     padding: 25px 25px 15px 25px;
     position: relative;
 
-    .header__back-icon {
-        color: faded-text-color($text-color);
+    & a {
         position: absolute;
         left: 20px;
+    }
+
+    .header__back-icon {
+        color: faded-text-color($text-color);
     }
 
     .header__logo img{

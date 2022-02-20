@@ -154,11 +154,10 @@
 
         &__save-icon {
             @include save-icon-style();
+            @include save-icon-style-animation();
         }
 
-        &__save-icon:hover {
-            @include save-icon-style-hover();
-        }
+
     }    
 }
 
@@ -201,6 +200,7 @@
     border-radius: 15px;
     @include box-shadow($bg1);
     @include flexbox();
+    flex-wrap: nowrap;
     align-items: center;
 
     &__content{
@@ -209,15 +209,33 @@
 
         &__title {
             margin-bottom: 4px;
+            
+            & h4 {
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            }
         }
 
         &__description {
             @include flexbox();
+            flex-wrap: nowrap;
             justify-content: space-between;
             align-items: center;
 
             &__text {
                 color: faded-text-color($text-color);
+                min-width: 0%;
+            }
+
+            &__text p {
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+
+            &__price {
+                margin-left: 10px;
             }
         }    
     }
@@ -237,12 +255,15 @@
     &:hover {
         .plate-card__content {
             width: 85%;
+            @include checked-card-content-animation;
         }
     
         .plate-card__checkbox {
             @include flexbox();
             justify-content: center;
-            align-items: center;        }
+            align-items: center;     
+            @include checkbox-animation();   
+        }
     }
 }
 
@@ -250,19 +271,24 @@
     width: 162px;
     display: inline-block;
     color: white;
-    background-image: linear-gradient(map-get($accent-colors, "purl"), map-get($accent-colors, "viol")); 
+    background-image: $gradient1; 
     border-radius: 40px;
     padding: 15px 20px;
     margin: 10px 0px 50px 0px;
     text-align: center;
     @include box-shadow($color: map-get($accent-colors, "viol"));
+
+    &:hover {
+        background-image: lighten-btn-background();
+    }
 }
 
 @mixin save-icon-style {
     font-size: 20px;
     color: faded-text-color($text-color);
     position: relative;
-    background-color: red;
+    height: 21px;
+    width: 20px;
 
     &--empty {
         position: absolute;
@@ -280,16 +306,62 @@
     } 
 }
 
-@mixin save-icon-style-hover {
+@mixin save-icon-style-animation {
 
-    & :nth-child(1) {
-        display: none;
+    &:hover {
+        & :nth-child(1) {
+            display: none;
+        }
+    
+        & :nth-child(2) {
+            display: block;
+            animation: heart-bounce 0.2s cubic-bezier(0.55,-0.24, 0.28, 1.25) forwards;
+            transform-origin: bottom;
+        
+            @keyframes heart-bounce {
+                from {
+                    transform: scale3d(1.5, 0.5, 1) translate3d(0, -10px, 0);
+                }
+                to{
+                    transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+                }
+            }
+        }
+    } 
+    
+    @media screen and (min-width: 768px) {
+        &:hover {
+            & :nth-child(1) {
+                display: block;
+            }
+
+            & :nth-child(2) {
+                display: none;
+                animation: none;
+            }
+        }
+
+        &:active{
+            & :nth-child(1) {
+                display: none;
+            }
+        
+            & :nth-child(2) {
+                display: block;
+                animation: heart-bounce 0.2s cubic-bezier(0.55,-0.24, 0.28, 1.25) forwards;
+                transform-origin: bottom;
+            
+                @keyframes heart-bounce {
+                    from {
+                        transform: scale3d(1.5, 0.5, 1) translate3d(0, -10px, 0);
+                    }
+                    to{
+                        transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+                    }
+                }
+            }
+        }
     }
-
-    & :nth-child(2) {
-        display: block;
-    }
-
 }
 
 @mixin loader {
@@ -307,15 +379,22 @@
             flex-flow: row nowrap;
             justify-content: center;
             align-items: center;
-            animation: loaderFade 3s ease-in 1 normal forwards;
+            animation: loader-fade-out 3s ease-in 1 normal forwards;
         
-            @keyframes loaderFade {
-                    75% {
-                            opacity: 100%;
-                    }
-                    100% {
-                        opacity: 0%;
-                    }
+            @keyframes loader-fade-out {
+                50% {
+                    opacity: 100%;
+                    z-index: 3;
+
+                }
+                75% {
+                    opacity: 0%;
+                    z-index: 3;
+                }
+                100% {
+                    opacity: 0%;
+                    z-index: -1;
+                }
             }
     
             & div {
@@ -337,7 +416,7 @@
                 animation-delay: 0.25s;
             }
     
-            @keyframes bounce {;
+            @keyframes bounce {
                 from {
                     opacity: 0%;
                     transform: translate3d(0, 0, 0);
@@ -347,6 +426,84 @@
                     opacity: 100%;
                     transform: translate3d(0, -35px, 0);
                 }
+            }
+        }
+    }
+}
+
+@mixin card-animation {
+    animation: slide-and-fadein 0.5s cubic-bezier(0, 0.01, 0.31, 1) both; 
+
+    @keyframes slide-and-fadein {
+        from {
+            transform: translate3d(0, 10px, 0);
+            opacity: 0%;
+        }
+        to {
+            transform: translate3d(0, 0px, 0);
+            opacity: 100%;
+        }
+    }
+
+    &__content {
+        &__title {
+            animation: slide-and-fadein 0.5s cubic-bezier(0, 0.01, 0.31, 1) both; 
+            animation-delay: 0.2s;
+        }
+
+        &__description{
+            animation: slide-and-fadein 0.5s cubic-bezier(0, 0.01, 0.31, 1) both; 
+            animation-delay: 0.4s;
+        }
+    }
+
+    &:nth-child(4) {
+        animation-delay: 0.6s;
+    }
+
+    &:nth-child(5) {
+        animation-delay: 0.8s;
+    }
+}
+
+@mixin checked-card-content-animation {
+    animation: slide-in-content 0.4s ease-out both;
+    transform-origin: left center 0;
+
+
+    @keyframes slide-in-content {
+        from {
+            width: 100%;
+        }
+        
+        to {
+            width: 85%;
+        }
+    }
+}
+
+@mixin checkbox-animation {
+    animation: slide-in-checkbox 0.4s ease-out both;
+    transform-origin: right center 0;
+    
+    @keyframes slide-in-checkbox {
+        from {
+            width: 0%;
+        }
+        to {
+            width: 15%;
+        }
+    }
+
+    & i {
+        animation: rotate-checkbox 0.4s ease-out both;
+
+        @keyframes rotate-checkbox {
+            from {
+                transform: rotate3d(0,0,1,-360deg);
+            }
+            to {
+                transform: rotate3d(0,0,1,0deg);
             }
         }
     }

@@ -367,97 +367,6 @@ h4 {
   margin: 0px;
 }
 
-.loader__container {
-  background-color: #FFFFFF;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  z-index: 3;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-animation: loaderFade 3s ease-in 1 normal forwards;
-          animation: loaderFade 3s ease-in 1 normal forwards;
-}
-
-@-webkit-keyframes loaderFade {
-  75% {
-    opacity: 100%;
-  }
-  100% {
-    opacity: 0%;
-  }
-}
-
-@keyframes loaderFade {
-  75% {
-    opacity: 100%;
-  }
-  100% {
-    opacity: 0%;
-  }
-}
-
-.loader__container div {
-  background-color: #9356dc;
-  width: 8px;
-  height: 8px;
-  margin: 4px;
-  border-radius: 50%;
-  -webkit-animation: bounce 0.6s ease-in-out infinite alternate;
-          animation: bounce 0.6s ease-in-out infinite alternate;
-}
-
-.loader__container :nth-child(1) {
-  background-color: #FF79DA;
-  -webkit-animation-delay: 0.50s;
-          animation-delay: 0.50s;
-}
-
-.loader__container :nth-child(2) {
-  background-color: #99E2D0;
-  -webkit-animation-delay: 0.25s;
-          animation-delay: 0.25s;
-}
-
-@-webkit-keyframes bounce {
-  from {
-    opacity: 0%;
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
-  }
-  to {
-    opacity: 100%;
-    -webkit-transform: translate3d(0, -35px, 0);
-            transform: translate3d(0, -35px, 0);
-  }
-}
-
-@keyframes bounce {
-  from {
-    opacity: 0%;
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
-  }
-  to {
-    opacity: 100%;
-    -webkit-transform: translate3d(0, -35px, 0);
-            transform: translate3d(0, -35px, 0);
-  }
-}
-
 .homepage-body {
   background-color: #FFFFFF;
 }
@@ -518,10 +427,13 @@ h4 {
   position: relative;
 }
 
-.homepage-body header .header__back-icon {
-  color: #666666;
+.homepage-body header a {
   position: absolute;
   left: 20px;
+}
+
+.homepage-body header .header__back-icon {
+  color: #666666;
 }
 
 .homepage-body header .header__logo img {
@@ -589,6 +501,11 @@ h4 {
   text-align: center;
   -webkit-box-shadow: 0px 5px 10px #c9abee;
           box-shadow: 0px 5px 10px #c9abee;
+}
+
+.homepage-body .section-1__explore-btn p:hover {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ff93e1), to(#a16be0));
+  background-image: linear-gradient(#ff93e1, #a16be0);
 }
 
 .homepage-body .section-2 {
@@ -871,7 +788,8 @@ h4 {
   font-size: 20px;
   color: #666666;
   position: relative;
-  background-color: red;
+  height: 21px;
+  width: 20px;
 }
 
 .homepage-body .cards__description__save-icon--empty {
@@ -894,6 +812,73 @@ h4 {
 
 .homepage-body .cards__description__save-icon:hover :nth-child(2) {
   display: block;
+  -webkit-animation: heart-bounce 0.2s cubic-bezier(0.55, -0.24, 0.28, 1.25) forwards;
+          animation: heart-bounce 0.2s cubic-bezier(0.55, -0.24, 0.28, 1.25) forwards;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+}
+
+@-webkit-keyframes heart-bounce {
+  from {
+    -webkit-transform: scale3d(1.5, 0.5, 1) translate3d(0, -10px, 0);
+            transform: scale3d(1.5, 0.5, 1) translate3d(0, -10px, 0);
+  }
+  to {
+    -webkit-transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+            transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes heart-bounce {
+  from {
+    -webkit-transform: scale3d(1.5, 0.5, 1) translate3d(0, -10px, 0);
+            transform: scale3d(1.5, 0.5, 1) translate3d(0, -10px, 0);
+  }
+  to {
+    -webkit-transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+            transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .homepage-body .cards__description__save-icon:hover :nth-child(1) {
+    display: block;
+  }
+  .homepage-body .cards__description__save-icon:hover :nth-child(2) {
+    display: none;
+    -webkit-animation: none;
+            animation: none;
+  }
+  .homepage-body .cards__description__save-icon:active :nth-child(1) {
+    display: none;
+  }
+  .homepage-body .cards__description__save-icon:active :nth-child(2) {
+    display: block;
+    -webkit-animation: heart-bounce 0.2s cubic-bezier(0.55, -0.24, 0.28, 1.25) forwards;
+            animation: heart-bounce 0.2s cubic-bezier(0.55, -0.24, 0.28, 1.25) forwards;
+    -webkit-transform-origin: bottom;
+            transform-origin: bottom;
+  }
+  @-webkit-keyframes heart-bounce {
+    from {
+      -webkit-transform: scale3d(1.5, 0.5, 1) translate3d(0, -10px, 0);
+              transform: scale3d(1.5, 0.5, 1) translate3d(0, -10px, 0);
+    }
+    to {
+      -webkit-transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+              transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+    }
+  }
+  @keyframes heart-bounce {
+    from {
+      -webkit-transform: scale3d(1.5, 0.5, 1) translate3d(0, -10px, 0);
+              transform: scale3d(1.5, 0.5, 1) translate3d(0, -10px, 0);
+    }
+    to {
+      -webkit-transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+              transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+    }
+  }
 }
 
 .homepage-body .footer-container {
@@ -1019,10 +1004,13 @@ h4 {
   position: relative;
 }
 
-.restaurant-page-body header .header__back-icon {
-  color: #666666;
+.restaurant-page-body header a {
   position: absolute;
   left: 20px;
+}
+
+.restaurant-page-body header .header__back-icon {
+  color: #666666;
 }
 
 .restaurant-page-body header .header__logo img {
@@ -1090,7 +1078,8 @@ h4 {
   font-size: 20px;
   color: #666666;
   position: relative;
-  background-color: red;
+  height: 21px;
+  width: 20px;
   margin-right: 10px;
 }
 
@@ -1114,6 +1103,62 @@ h4 {
 
 .restaurant-page-body .menu-container__title__save-icon:hover :nth-child(2) {
   display: block;
+  -webkit-animation: heart-bounce 0.2s cubic-bezier(0.55, -0.24, 0.28, 1.25) forwards;
+          animation: heart-bounce 0.2s cubic-bezier(0.55, -0.24, 0.28, 1.25) forwards;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+}
+
+@keyframes heart-bounce {
+  from {
+    -webkit-transform: scale3d(1.5, 0.5, 1) translate3d(0, -10px, 0);
+            transform: scale3d(1.5, 0.5, 1) translate3d(0, -10px, 0);
+  }
+  to {
+    -webkit-transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+            transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .restaurant-page-body .menu-container__title__save-icon:hover :nth-child(1) {
+    display: block;
+  }
+  .restaurant-page-body .menu-container__title__save-icon:hover :nth-child(2) {
+    display: none;
+    -webkit-animation: none;
+            animation: none;
+  }
+  .restaurant-page-body .menu-container__title__save-icon:active :nth-child(1) {
+    display: none;
+  }
+  .restaurant-page-body .menu-container__title__save-icon:active :nth-child(2) {
+    display: block;
+    -webkit-animation: heart-bounce 0.2s cubic-bezier(0.55, -0.24, 0.28, 1.25) forwards;
+            animation: heart-bounce 0.2s cubic-bezier(0.55, -0.24, 0.28, 1.25) forwards;
+    -webkit-transform-origin: bottom;
+            transform-origin: bottom;
+  }
+  @-webkit-keyframes heart-bounce {
+    from {
+      -webkit-transform: scale3d(1.5, 0.5, 1) translate3d(0, -10px, 0);
+              transform: scale3d(1.5, 0.5, 1) translate3d(0, -10px, 0);
+    }
+    to {
+      -webkit-transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+              transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+    }
+  }
+  @keyframes heart-bounce {
+    from {
+      -webkit-transform: scale3d(1.5, 0.5, 1) translate3d(0, -10px, 0);
+              transform: scale3d(1.5, 0.5, 1) translate3d(0, -10px, 0);
+    }
+    to {
+      -webkit-transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+              transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+    }
+  }
 }
 
 .restaurant-page-body .menu-container__course {
@@ -1151,9 +1196,13 @@ h4 {
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-animation: slide-and-fadein 0.5s cubic-bezier(0, 0.01, 0.31, 1) both;
+          animation: slide-and-fadein 0.5s cubic-bezier(0, 0.01, 0.31, 1) both;
 }
 
 .restaurant-page-body .menu-container .plate-card__content {
@@ -1165,6 +1214,12 @@ h4 {
   margin-bottom: 4px;
 }
 
+.restaurant-page-body .menu-container .plate-card__content__title h4 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 .restaurant-page-body .menu-container .plate-card__content__description {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1173,6 +1228,8 @@ h4 {
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -1183,6 +1240,17 @@ h4 {
 
 .restaurant-page-body .menu-container .plate-card__content__description__text {
   color: #666666;
+  min-width: 0%;
+}
+
+.restaurant-page-body .menu-container .plate-card__content__description__text p {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.restaurant-page-body .menu-container .plate-card__content__description__price {
+  margin-left: 10px;
 }
 
 .restaurant-page-body .menu-container .plate-card__checkbox {
@@ -1199,6 +1267,28 @@ h4 {
 
 .restaurant-page-body .menu-container .plate-card:hover .plate-card__content {
   width: 85%;
+  -webkit-animation: slide-in-content 0.4s ease-out both;
+          animation: slide-in-content 0.4s ease-out both;
+  -webkit-transform-origin: left center 0;
+          transform-origin: left center 0;
+}
+
+@-webkit-keyframes slide-in-content {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 85%;
+  }
+}
+
+@keyframes slide-in-content {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 85%;
+  }
 }
 
 .restaurant-page-body .menu-container .plate-card:hover .plate-card__checkbox {
@@ -1215,6 +1305,105 @@ h4 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-animation: slide-in-checkbox 0.4s ease-out both;
+          animation: slide-in-checkbox 0.4s ease-out both;
+  -webkit-transform-origin: right center 0;
+          transform-origin: right center 0;
+}
+
+@-webkit-keyframes slide-in-checkbox {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 15%;
+  }
+}
+
+@keyframes slide-in-checkbox {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 15%;
+  }
+}
+
+.restaurant-page-body .menu-container .plate-card:hover .plate-card__checkbox i {
+  -webkit-animation: rotate-checkbox 0.4s ease-out both;
+          animation: rotate-checkbox 0.4s ease-out both;
+}
+
+@-webkit-keyframes rotate-checkbox {
+  from {
+    -webkit-transform: rotate3d(0, 0, 1, -360deg);
+            transform: rotate3d(0, 0, 1, -360deg);
+  }
+  to {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+            transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+@keyframes rotate-checkbox {
+  from {
+    -webkit-transform: rotate3d(0, 0, 1, -360deg);
+            transform: rotate3d(0, 0, 1, -360deg);
+  }
+  to {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+            transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+@-webkit-keyframes slide-and-fadein {
+  from {
+    -webkit-transform: translate3d(0, 10px, 0);
+            transform: translate3d(0, 10px, 0);
+    opacity: 0%;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0px, 0);
+            transform: translate3d(0, 0px, 0);
+    opacity: 100%;
+  }
+}
+
+@keyframes slide-and-fadein {
+  from {
+    -webkit-transform: translate3d(0, 10px, 0);
+            transform: translate3d(0, 10px, 0);
+    opacity: 0%;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0px, 0);
+            transform: translate3d(0, 0px, 0);
+    opacity: 100%;
+  }
+}
+
+.restaurant-page-body .menu-container .plate-card__content__title {
+  -webkit-animation: slide-and-fadein 0.5s cubic-bezier(0, 0.01, 0.31, 1) both;
+          animation: slide-and-fadein 0.5s cubic-bezier(0, 0.01, 0.31, 1) both;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+.restaurant-page-body .menu-container .plate-card__content__description {
+  -webkit-animation: slide-and-fadein 0.5s cubic-bezier(0, 0.01, 0.31, 1) both;
+          animation: slide-and-fadein 0.5s cubic-bezier(0, 0.01, 0.31, 1) both;
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+
+.restaurant-page-body .menu-container .plate-card:nth-child(4) {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+
+.restaurant-page-body .menu-container .plate-card:nth-child(5) {
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
 }
 
 .restaurant-page-body .menu-container__order-btn {
@@ -1233,6 +1422,11 @@ h4 {
   text-align: center;
   -webkit-box-shadow: 0px 5px 10px #c9abee;
           box-shadow: 0px 5px 10px #c9abee;
+}
+
+.restaurant-page-body .menu-container__order-btn p:hover {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ff93e1), to(#a16be0));
+  background-image: linear-gradient(#ff93e1, #a16be0);
 }
 
 .restaurant-page-body .footer-container {
