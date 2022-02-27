@@ -17,6 +17,6 @@
     @include base-styles();
 
     @import './layout/header';
-    @import './pages/thefullpalette.scss';
+    @import './pages/_restaurant.scss';
     @import './layout/footer';
 }

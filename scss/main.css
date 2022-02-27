@@ -1232,6 +1232,9 @@ h4 {
 
 .restaurant-page-body .section-1__image img {
   width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-height: 322px;
 }
 
 .restaurant-page-body .section-2 {
@@ -1621,42 +1624,42 @@ h4 {
           animation-delay: 0.4s;
 }
 
-.restaurant-page-body .menu-container .plate-card:nth-child(4) {
+.restaurant-page-body .menu-container .plate-card:nth-of-type(4) {
   -webkit-animation-delay: 0.6s;
           animation-delay: 0.6s;
 }
 
-.restaurant-page-body .menu-container .plate-card:nth-child(5) {
+.restaurant-page-body .menu-container .plate-card:nth-of-type(5) {
   -webkit-animation-delay: 0.8s;
           animation-delay: 0.8s;
 }
 
-.restaurant-page-body .menu-container .plate-card:nth-child(7) {
+.restaurant-page-body .menu-container .plate-card:nth-of-type(7) {
   -webkit-animation-delay: 1s;
           animation-delay: 1s;
 }
 
-.restaurant-page-body .menu-container .plate-card:nth-child(8) {
+.restaurant-page-body .menu-container .plate-card:nth-of-type(8) {
   -webkit-animation-delay: 1.2s;
           animation-delay: 1.2s;
 }
 
-.restaurant-page-body .menu-container .plate-card:nth-child(9) {
+.restaurant-page-body .menu-container .plate-card:nth-of-type(9) {
   -webkit-animation-delay: 1.4s;
           animation-delay: 1.4s;
 }
 
-.restaurant-page-body .menu-container .plate-card:nth-child(11) {
+.restaurant-page-body .menu-container .plate-card:nth-of-type(11) {
   -webkit-animation-delay: 1.6s;
           animation-delay: 1.6s;
 }
 
-.restaurant-page-body .menu-container .plate-card:nth-child(12) {
+.restaurant-page-body .menu-container .plate-card:nth-of-type(12) {
   -webkit-animation-delay: 1.8s;
           animation-delay: 1.8s;
 }
 
-.restaurant-page-body .menu-container .plate-card:nth-child(13) {
+.restaurant-page-body .menu-container .plate-card:nth-of-type(13) {
   -webkit-animation-delay: 2s;
           animation-delay: 2s;
 }
